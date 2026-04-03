@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", async (req, res) => {
     const msg = req.query.msg;
     try{
-        const result = await db.query("SELECT * FROM courses ORDER BY id DESC");
+        const result = await db.query("SELECT * FROM courses ORDER BY progression DESC");
         res.render("index", {
             courses: result.rows, 
             msg

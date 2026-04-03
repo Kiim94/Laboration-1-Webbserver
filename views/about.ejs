@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databaserat-CV</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%-include("partials/navbar") %>
+    <h1>Om sidan</h1>
+    <p>Syftet med denna webbplats är att man ska kunna lägga till och spara de kurser man går eller har gått.</p>
+    <p>Användaren ska kunna se alla kurser på startsidan, lägga till nya kurser via ett formulär på en annan sida. Det ska gå att se kurskod, kursnamn, kursplan och progression.</p>
+    <p>För att göra denna webbplats så har dessa använts:</p>
+    <ul>
+        <li>Node.js och Express för server-delen</li>
+        <li>EJS för rendering av HTML (så att det går att göra JS koder direkt i de som normalt är HTML filer)</li>
+        <li>SQLite3 har använts som databas</li>
+    </ul>
+
+    <h2>Slutsatser/Tankar om uppgiften</h2>
+    <p>Det har varit ganska svårt. Det har känts som ett helt annat språk än JavaScript som har använts hittills, vilket kanske inte är så konstigt egentligen. Det har lett till lite förvirring att lägga till add.post, add.get och liknande.</p>
+    <p>Det svåraste för min del har egentligen varit att lista ut var någonting ska ta vägen. Det är lätt att förstå att app.get("/") syftar på Startsidan, exempelvis, 
+        men jag hade det problemet att jag ofta blandade ihop vilken länk som ledde vart och varför jag ville att den skulle dit.</p>
+    <p>Som vanligt kräver detta övning: jag hoppas hitta tiden att repetera, repetera och repetera på nytt.</p>
+
+    <h3>Vad jag har lärt mig</h3>
+    <p>Mot slutet av projektet började jag uppfatta ett visst mönster:</p>
+    <ul>
+        <li>Börja med att importera verktyg och skapa variabler: exempelvis express och sqlite3.</li>
+        <li>Skapa en databas och inställningar som ansluter till den: tabeller definieras och vilka värden som ska finnas.</li>
+        <li>Definiera vilka routes (sidor på webbplatsen) som finns. Servern hämtar data från databasen och skickar vidare till ESJ-sidor.</li>
+    </ul>
+    <p>Hit var det relativt enkelt att uppfatta mönstret. Det är efter dessa som jag tyckte det blev lite svårare: när servern ska ta emot information från användaren (via inputs), bearbeta och spara den i databasen och därefter skicka tillbaka respons ifall det gick bra eller om det blev fel.</p>
+    <p>Det absolut sista, att ha en app.listen, kändes som att gå tillbaka till mönstret igen.</p>
+    <h3>Att använda Render</h3>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databaserat-CV</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!--underbart med partial på detta vis - för navigering-->
+    <%-include("partials/navbar") %>
+
+    <h1>Startsida</h1>
+    <a href="/add">Gå hit för att lägga till ny kurs</a>
+    <p>För denna uppgift ska en webbapplikation skapas som tillåter användare att lagra och visa de kurser de har läst.</p>
+    <p>På den här sidan visas de kurser som har lagrats i databasen.</p>
+
+    <!--tanken här är att det ska visa olika färg beroende på om något gick snett-->
+    <% if (msg){ %> 
+        <p style="color: crimson;"><%= msg %></p>
+    <% } %>
+
+    <!--ingen tabel om inget värde i courses-->
+    <% if (courses.length === 0) { %>
+        <p style="font-style:italic;">Inga kurser har ännu lagts till!</p>
+        <% }else{ %>
+            <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kurskod</th>
+                        <th>Kursnamn</th>
+                        <th>Kursplan</th>
+                        <th class="prog">Kursprogression</th>
+                        <th>Radera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--loopa för att lägga till allt-->
+                    <% courses.forEach(course => { %>
+                    <tr>
+                        <td><%= course.course_code %> </td>
+                        <td><%= course.course_name %> </td>
+                        <td><a href="<%= course.syllabus %>" target="_blank"><%=course.syllabus%></a></td>
+                        <td class="prog"><%= course.progression || "-" %> </td>
+                        <td>
+                            <form action="/delete/<%= course.id %>" method="POST" onsubmit="return confirm('Vill du ta bort kursen?');">
+                                <button type="submit">Ta bort</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+            </div>
+        <% } %>
+
+</body>
+</html>

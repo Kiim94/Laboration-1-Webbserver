@@ -7,31 +7,39 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <%-include("partials/navbar") %>
-    <h1>Lägg till kurser</h1>
-<% if (message) { %>
-    <p style="color:crimson;"><%= message %></p>
-<% } %>
+    <main>
+        <%-include("partials/navbar") %>
+        <h1>Lägg till kurser</h1>
+        
+    <% if (message) { %>
+        <p style="color:crimson;"><%= message %></p>
+    <% } %>
 
-<% if(news){ %> 
-    <p style="color:green; font-weight:bold;"><%= news %></p>
-<% } %>
+    <% if(news){ %> 
+        <p style="color:green; font-weight:bold;"><%= news %></p>
+    <% } %>
 
-    <form action="/add" method="POST" id="form">
-        <label for="course_code">Kurskod:</label>
-        <input type="text" name="course_code" id="course_code">
-        <label for="course_name">Kursnamn:</label>
-        <input type="text" name="course_name" id="course_name">
-        <label for="syllabus">Syllabus:</label>
-        <input type="text" name="syllabus" id="syllabus">
-        <label for="progression">Progression (A eller B):</label>
-        <select name="progression" id="progression">
-            <option value="" disabled selected>Välj progression</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-        </select>
-        <button type="submit">Lägg till kurs</button>
-    </form>
+        <form action="/add" method="POST" id="form">
+            <label for="course_code">Kurskod:</label>
+
+            <!--lagt till value = om användaren skrev ngn liten miss så ska det finnas kvar så den kan kontrollera-->
+            <input type="text" name="course_code" id="course_code" value="<%= course_code %>">
+
+            <label for="course_name">Kursnamn:</label>
+            <input type="text" name="course_name" id="course_name" value="<%= course_name %>">
+
+            <label for="syllabus">Syllabus:</label>
+            <input type="text" name="syllabus" id="syllabus" value="<%= syllabus %>">
+
+            <label for="progression">Progression (A eller B):</label>
+            <select name="progression" id="progression">
+                <option value="" disabled selected>Välj progression</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+            <button type="submit">Lägg till kurs</button>
+        </form>
+    </main>
 </body>
 </html>

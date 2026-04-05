@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <main>
     <!--underbart med partial på detta vis - för navigering-->
     <%-include("partials/navbar") %>
 
@@ -19,7 +20,7 @@
     <% if (msg){ %> 
         <p style="color: crimson;"><%= msg %></p>
     <% } %>
-
+    </main>
     <!--ingen tabel om inget värde i courses-->
     <% if (courses.length === 0) { %>
         <p style="font-style:italic;">Inga kurser har ännu lagts till!</p>
@@ -54,6 +55,6 @@
             </table>
             </div>
         <% } %>
-
+    
 </body>
 </html>

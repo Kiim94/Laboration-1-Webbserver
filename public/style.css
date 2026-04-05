@@ -1,3 +1,9 @@
+html{
+    font-size:16px;
+}
+body, html{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 body{
     background-color:antiquewhite;
 }
@@ -70,5 +76,22 @@ li a{
     font-size:1.5rem;
     &:hover{
         background-color:rgb(197, 204, 211);
+    }
+}
+
+main{
+    max-width:1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+}
+p, .about-ul{
+    font-size:1.2rem;
+    line-height:1.7;
+}
+
+@media (max-width:500px){
+    html{
+        font-size:12px;
     }
 }

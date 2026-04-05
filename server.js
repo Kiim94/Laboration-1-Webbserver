@@ -81,6 +81,10 @@ app.get("/add", async (req, res) => {
         res.render("add", {
         message: "", 
         news: "",
+        course_code: "",
+        course_name: "",
+        syllabus: "",
+        progression: ""
         })
     }catch(err){
         console.error(err);

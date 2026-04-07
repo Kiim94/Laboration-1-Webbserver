@@ -20,9 +20,10 @@
             </ul>
 
         <h2>Slutsatser/Tankar om uppgiften</h2>
-            <p>Det har varit ganska svårt. Det har känts som ett helt annat språk än JavaScript som har använts hittills, vilket kanske inte är så konstigt egentligen. Det har lett till lite förvirring att lägga till add.post, add.get och liknande.</p>
+            <p>Det har varit ganska svårt. Det har känts som ett helt annat språk än JavaScript som har använts hittills, vilket kanske inte är så konstigt egentligen. 
+                Det har lett till lite förvirring att lägga till add.post, add.get och liknande.</p>
             <p>Det svåraste för min del har egentligen varit att lista ut var någonting ska ta vägen. Det är lätt att förstå att app.get("/") syftar på Startsidan, exempelvis, 
-                men jag hade det problemet att jag ofta blandade ihop vilken länk som ledde vart och varför jag ville att den skulle dit.</p>
+                men jag hade det problemet att jag ofta blandade ihop vad som ledde vart och varför jag ville att den skulle dit.</p>
             <p>Som vanligt kräver detta övning: jag hoppas hitta tiden att repetera, repetera och repetera på nytt.</p>
 
         <h3>Vad jag har lärt mig</h3>
@@ -37,9 +38,11 @@
                 <li>Skapa en databas och inställningar som ansluter till den: tabeller definieras och vilka värden som ska finnas.</li>
                 <li>Definiera vilka routes (sidor på webbplatsen) som finns. Servern hämtar data från databasen och skickar vidare till ESJ-sidor.</li>
             </ul>
-            <p>Hit var det relativt enkelt att uppfatta mönstret. Det är efter dessa som jag tyckte det blev lite svårare: när servern ska ta emot information från användaren (via inputs), bearbeta och spara den i databasen och därefter skicka tillbaka respons ifall det gick bra eller om det blev fel.</p>
+            <p>Hit var det relativt enkelt att uppfatta mönstret. Det är efter dessa som jag tyckte det blev lite svårare: när servern ska ta emot information från användaren (via inputs), 
+                bearbeta och spara den i databasen och därefter skicka tillbaka respons ifall det gick bra eller om det blev fel.</p>
             <p>Det absolut sista, att ha en app.listen, kändes som att gå tillbaka till mönstret igen.</p>
-            <p><b>Som nämnt ovan</b> bytte jag till postgre - dels för att sqlite3 inte verkar särskilt "vänlig" vad det gäller att deploya, men också för att jag ville testa något annat. Upplevelsen med den var nästan att den var lättare? Jag kan inte riktigt förklara det.
+            <p><b>Som nämnt ovan</b> bytte jag till postgre - dels för att sqlite3 inte verkar särskilt "vänlig" vad det gäller att deploya, men också för att jag ville testa något annat. 
+                Upplevelsen med den var nästan att den var lättare? Jag kan inte riktigt förklara det.
                 Kanske att den var mer "bekant": async, try och catch har vi använt i tidigare kurs, så det kanske var den som gjorde det mindre skräckinjagande att använda.
             </p>
         <h3>Att använda Render</h3>

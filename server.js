@@ -76,6 +76,10 @@ app.get("/about", async (req, res) => {
 })
 
 //Lägg till kurs - formulär sidan
+/*Om någon vet: fick ett internal server error när jag lagt till value i ejs. 
+Här nedan hade jag bara res.render("add") fram till news: "". 
+Ändrade här efter error så course_code med flera fanns med.
+Efter uppladdning verkar det nu fungera? */
 app.get("/add", async (req, res) => {
     try{
         res.render("add", {
@@ -152,7 +156,7 @@ app.post("/delete/:id", async (req, res) => {
         await client.query("DELETE FROM courses WHERE id = $1", [id]);
         /*testat redirect. Med / först = gå till startsidan. 
         En ? för att visa en query - msg. Msg matchar i index.ejs en ejs parameter.
-        i app.get("/" skapas variabel för msg. Ska visa ett meddelande till användaren
+        i app.get("/" skapas variabel för msg som är tom till att börja med. Ska visa ett meddelande till användaren
         när kurs tas bort*/
         res.redirect("/?msg=Kurs borttagen");
     }catch(err){
